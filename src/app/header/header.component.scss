@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    justify-content:space-between;
+    
+    img {
+        width:150px;
+        height: auto;
+    }
+
+    li {
+        margin-left:2rem ;
+        list-style-type: none;
+
+    }
+}

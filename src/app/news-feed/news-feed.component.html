@@ -1,1 +1,25 @@
-<p>news-feed works!</p>
+<main>
+    <section class="cardContainer">
+        @for (new of newsItems; track $index) {
+        <div>
+            <div>
+                <img class="carImage" [src]="new.urlToImage" alt="cardImage">
+            </div>
+            <div>
+                <h1> {{ new.title }} </h1>
+            </div>
+            <div>
+                <p> {{new.description}} </p>
+            </div>
+            <div>
+                <div>
+                    <div><img src="" alt="icon"></div>
+                    <div> {{ new.author }} </div>
+                </div>
+                <span class="material-icons">favorite</span>
+                <span class="material-icons">bookmark</span>
+            </div>
+        </div>
+        }
+    </section>
+</main>

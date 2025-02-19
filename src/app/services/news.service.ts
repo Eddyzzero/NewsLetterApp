@@ -14,21 +14,18 @@ export class NewsService {
     constructor() { }
 
     getNew(): Observable<any> {
-        return new Observable( observe => {
+        return new Observable(observe => {
             axios.get(this.newsUrl, {
                 params: {
-                    q: 'exemple',
-                    langague: 'fr',
-                    
                 },
                 headers: {
-                     // Utilisez le schéma d'authentification approprié (Bearer, Basic, etc.)
+                    // Utilisez le schéma d'authentification approprié (Bearer, Basic, etc.)
                     Authorization: `Bearer ${this.apiKey}`
                 }
             }).then(response => {
                 observe.next(response.data.articles);
                 observe.complete();
-            }).catch( error => { observe.error(error)})
-        }) 
+            }).catch(error => { observe.error(error) })
+        })
     }
 }

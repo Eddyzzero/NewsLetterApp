@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { NewsFeedComponent } from "./news-feed/news-feed.component";
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [
     HeaderComponent,
     FooterComponent,
-    NewsFeedComponent
+    RouterModule
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

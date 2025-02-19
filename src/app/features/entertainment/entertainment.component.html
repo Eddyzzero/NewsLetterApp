@@ -1,1 +1,27 @@
 <p>entertainment works!</p>
+<main>
+    <section class="cardContainer">
+        @for (intertainmentItem of intertainmentItems; track $index) {
+        <div>
+            <div>
+                <img class="carImage" [src]="intertainmentItem.urlToImage" alt="cardImage">
+            </div>
+            <div>
+                <h1> {{ intertainmentItem.title }} </h1>
+            </div>
+            <div>
+                <p> {{intertainmentItem.description}} </p>
+            </div>
+            <div>
+                <div>
+                    <div><img src="" alt="icon"></div>
+                    <div> {{ intertainmentItem.author }} </div>
+                </div>
+                <span class="material-icons">favorite</span>
+                <span class="material-icons">bookmark</span>
+                <p> {{ intertainmentItem.publishedAt }} </p>
+            </div>
+        </div>
+        }
+    </section>
+</main>

@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   imports: [
     HeaderComponent,
-    FooterComponent,
     RouterModule
 ],
   templateUrl: './app.component.html',
@@ -14,4 +13,11 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'newsLetterAngular';
+
+  constructor( private router: Router) { }
+
+  // Méthode pour vérifier si la route est active
+  isActive(route: string): boolean {
+    return this.router.url === '/' + route;
+    }
 }

@@ -4,15 +4,14 @@
     <!-- app nav bar with routing -->
     <nav>
         <ul>
-            <li><a routerLink="general">General</a></li>
-            <li><a routerLink="entertainment">Entertainment</a></li>
-            <li><a routerLink="health">Health</a></li>
-            <li><a routerLink="science">Science</a></li>
-            <li><a routerLink="sports">Sports</a></li>
-            <li><a routerLink="technology">Technology</a></li>
+            <li [class.active]="isActive('general')"><a routerLink="general">General</a></li>
+            <li [class.active]="isActive('entertainment')"><a routerLink="entertainment">Entertainment</a></li>
+            <li [class.active]="isActive('science')"><a routerLink="science">Science</a></li>
+            <li [class.active]="isActive('health')"><a routerLink="health">Health</a></li>
+            <li [class.active]="isActive('sports')"><a routerLink="sports">Sports</a></li>
+            <li [class.active]="isActive('technology')"><a routerLink="technology">Technology</a></li>
         </ul>
         <!-- ceci on l'ajoute pour creer une route -->
         <router-outlet></router-outlet>
     </nav>
-    <app-footer></app-footer>
 </div>

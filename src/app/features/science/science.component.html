@@ -1,23 +1,25 @@
 <main>
     <section class="cardContainer">
         @for (scienceItem of scienceItems; track $index) {
-        <div>
-            <div>
-                <img class="carImage" [src]="scienceItem.urlToImage" alt="cardImage">
-            </div>
-            <div>
-                <h1> {{ scienceItem.title }} </h1>
-            </div>
-            <div>
-                <p> {{scienceItem.description}} </p>
-            </div>
-            <div>
-                <div>
-                    <div><img src="" alt="icon"></div>
-                    <div> {{ scienceItem.author }} </div>
+        <div class="cardWrapper">
+            <img class="carImage" [src]="scienceItem.urlToImage" alt="cardImage">
+            <div class="cardContent">
+                <div class="cardTitle">
+                    <h1> {{ scienceItem.title }} </h1>
                 </div>
-                <span class="material-icons">favorite</span>
-                <span class="material-icons">bookmark</span>
+                <div class="cardDescription">
+                    <p> {{scienceItem.description}} </p>
+                </div>
+                <div class="cardFooter">
+                    <div class="cardAuthor">
+                        <span class="material-icons">person</span>
+                        <div> {{ scienceItem.author }} </div>
+                    </div>
+                    <div class="cardActions">
+                        <span class="material-icons">favorite</span>
+                        <span class="material-icons">bookmark</span>
+                    </div>
+                </div>
                 <p> {{ scienceItem.publishedAt }} </p>
             </div>
         </div>

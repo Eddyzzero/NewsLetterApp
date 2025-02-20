@@ -10,12 +10,18 @@ nav {
 
         li {
             background-color: var(--primary-color);
-            padding: .5rem;
-            border-radius: 12px;
+            padding: .2rem 1rem;
+            border-radius: 20px;
             text-decoration: none;
+
+            &.active {
+                background-color: var(--ternary-color);
+                color: red;
+            }
 
             a {
                 text-decoration: none;
+                font-size: small;
                 color: var(--text-color);
             }
         }

@@ -2,23 +2,25 @@
     <section class="cardContainer">
         @for (intertainmentItem of intertainmentItems; track $index) {
         <div class="cardWrapper">
-            <img class="carImage" [src]="intertainmentItem.urlToImage" alt="cardImage">
+            <img class="carImage"[src]="intertainmentItem.urlToImage" alt="cardImage">
             <div class="cardContent">
                 <div class="cardTitle">
                     <h1> {{ intertainmentItem.title }} </h1>
                 </div>
-                <div>
+                <div class="cardDescription">
                     <p> {{intertainmentItem.description}} </p>
                 </div>
-                <div>
-                    <div>
-                        <div><img src="" alt="icon"></div>
+                <div class="cardFooter">
+                    <div class="cardAuthor">
+                        <span class="material-icons">person</span>
                         <div> {{ intertainmentItem.author }} </div>
                     </div>
-                    <span class="material-icons">favorite</span>
-                    <span class="material-icons">bookmark</span>
-                    <p> {{ intertainmentItem.publishedAt }} </p>
+                    <div class="cardActions">
+                        <span class="material-icons">favorite</span>
+                        <span class="material-icons">bookmark</span>
+                    </div>
                 </div>
+                <p> {{ intertainmentItem.publishedAt }} </p>
             </div>
         </div>
         }

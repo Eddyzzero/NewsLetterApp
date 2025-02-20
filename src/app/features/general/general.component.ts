@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GeneralService } from './service/general.service';
 
 @Component({
   selector: 'app-general',
@@ -9,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class GeneralComponent {
 
+  generalItems: any = [];
+
+  constructor(private generalService: GeneralService) { }
+
+  ngOnInit(): void {
+    this.generalService.getNew().subscribe(data => {
+      this.generalItems = data;
+    })
+  }
 }

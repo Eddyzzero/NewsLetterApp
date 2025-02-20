@@ -1,1 +1,26 @@
-<p>health works!</p>
+<main>
+    <section class="cardContainer">
+        @for (healthItem of healthItems; track $index) {
+        <div>
+            <div>
+                <img class="carImage" [src]="healthItem.urlToImage" alt="cardImage">
+            </div>
+            <div>
+                <h1> {{ healthItem.title }} </h1>
+            </div>
+            <div>
+                <p> {{healthItem.description}} </p>
+            </div>
+            <div>
+                <div>
+                    <div><img src="" alt="icon"></div>
+                    <div> {{ healthItem.author }} </div>
+                </div>
+                <span class="material-icons">favorite</span>
+                <span class="material-icons">bookmark</span>
+                <p> {{ healthItem.publishedAt }} </p>
+            </div>
+        </div>
+        }
+    </section>
+</main>

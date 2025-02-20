@@ -1,1 +1,28 @@
-<p>general works!</p>
+<main>
+    <section class="cardContainer">
+        @for (genralItem of generalItems; track $index) {
+        <div class="cardWrapper">
+            <img class="carImage" [src]="genralItem.urlToImage" alt="cardImage">
+            <div class="cardContent">
+                <div class="cardTitle">
+                    <h1> {{ genralItem.title }} </h1>
+                </div>
+                <div>
+                    <p> {{genralItem.description}} </p>
+                </div>
+                <div class="cardFooter">
+                    <div class="cardAuthor">
+                        <div><img src="" alt="icon"></div>
+                        <div> {{ genralItem.author }} </div>
+                    </div>
+                    <div class="cardActions">
+                        <span class="material-icons">favorite</span>
+                        <span class="material-icons">bookmark</span>
+                    </div>
+                </div>
+                <p> {{ genralItem.publishedAt }} </p>
+            </div>
+        </div>
+        }
+    </section>
+</main>

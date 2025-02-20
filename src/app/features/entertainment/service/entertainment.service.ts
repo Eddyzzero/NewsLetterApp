@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EntertainmentService {
-  private newsUrl = 'https://newsapi.org/v2/everything';
+  private newsUrl = 'https://newsapi.org/v2/top-headlines';
   private apiKey = '6494f8e1e40149fb95132af2a0612294';
 
   constructor() { }
@@ -15,8 +15,9 @@ export class EntertainmentService {
     return new Observable(observe => {
       axios.get(this.newsUrl, {
         params: {
-          q: 'colombie',
-          language: 'fr',
+          country: 'us',
+          category: 'entertainment',
+          apiKey: this.apiKey
         },
         headers: {
           // Utilisez le schéma d'authentification approprié (Bearer, Basic, etc.)

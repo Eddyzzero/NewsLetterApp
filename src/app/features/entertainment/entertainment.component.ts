@@ -11,7 +11,7 @@ import { EntertainmentService } from './service/entertainment.service';
 export class EntertainmentComponent implements OnInit {
   intertainmentItems: any = [];
 
-  constructor( private entertainmentService: EntertainmentService) {}
+  constructor(private entertainmentService: EntertainmentService) { }
 
   ngOnInit(): void {
     this.entertainmentService.getNew().subscribe(data => {

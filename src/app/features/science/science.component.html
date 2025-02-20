@@ -1,1 +1,26 @@
-<p>science works!</p>
+<main>
+    <section class="cardContainer">
+        @for (scienceItem of scienceItems; track $index) {
+        <div>
+            <div>
+                <img class="carImage" [src]="scienceItem.urlToImage" alt="cardImage">
+            </div>
+            <div>
+                <h1> {{ scienceItem.title }} </h1>
+            </div>
+            <div>
+                <p> {{scienceItem.description}} </p>
+            </div>
+            <div>
+                <div>
+                    <div><img src="" alt="icon"></div>
+                    <div> {{ scienceItem.author }} </div>
+                </div>
+                <span class="material-icons">favorite</span>
+                <span class="material-icons">bookmark</span>
+                <p> {{ scienceItem.publishedAt }} </p>
+            </div>
+        </div>
+        }
+    </section>
+</main>

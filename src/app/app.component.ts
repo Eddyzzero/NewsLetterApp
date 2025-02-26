@@ -7,17 +7,17 @@ import { Router } from '@angular/router';
   imports: [
     HeaderComponent,
     RouterModule
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'newsLetterAngular';
 
-  constructor( private router: Router) { }
+  constructor(private router: Router) { }
 
   // Méthode pour vérifier si la route est active
   isActive(route: string): boolean {
     return this.router.url === '/' + route;
-    }
+  }
 }

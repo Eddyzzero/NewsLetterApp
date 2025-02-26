@@ -1,17 +1,20 @@
-<div class="header finisher-header">
+<div>
     <!--App Header -->
     <app-header></app-header>
     <!-- app nav bar with routing -->
     <nav>
         <ul>
-            <li [class.active]="isActive('general')"><a routerLink="general">General</a></li>
-            <li [class.active]="isActive('entertainment')"><a routerLink="entertainment">Entertainment</a></li>
-            <li [class.active]="isActive('science')"><a routerLink="science">Science</a></li>
-            <li [class.active]="isActive('health')"><a routerLink="health">Health</a></li>
-            <li [class.active]="isActive('sports')"><a routerLink="sports">Sports</a></li>
-            <li [class.active]="isActive('technology')"><a routerLink="technology">Technology</a></li>
+            <a routerLink="general"><li [class.active]="isActive('general')">General</li></a>
+            <a routerLink="entertainment"><li [class.active]="isActive('entertainment')">Entertainment</li></a>
+            <a routerLink="science"><li [class.active]="isActive('science')">Science</li></a>
+            <a routerLink="health"><li [class.active]="isActive('health')">Health</li></a>
+            <a routerLink="sports"><li [class.active]="isActive('sports')">Sports</li></a>
+            <a routerLink="technology"><li [class.active]="isActive('technology')">Technology</li></a>
         </ul>
         <!-- ceci on l'ajoute pour creer une route -->
         <router-outlet></router-outlet>
     </nav>
 </div>
+
+
+

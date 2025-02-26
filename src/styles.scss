@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+//// reset css ////
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -43,15 +45,15 @@ table {
 	border-spacing: 0;
 }
 
-// google fonts 
+//// google fonts ////
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     //couleurs principales
-    --primary-color:#0D1B2A;
-    --secondary-color: #f4f4f4a9;
-    --ternary-color: #DB673C;
+    --primary-color: #1f2421;
+    --secondary-color: #216869;
+    --ternary-color: #9ce4e5;
     --text-color: #f4f4f4;
 
     //fonts principales
@@ -63,6 +65,14 @@ table {
         font-family: var(--secondary-font);
         color: var(--text-color);
         line-height: 1.6;
+
+        &.theme-light {
+            @include theme($theme-light);
+        },
+
+        &.$theme-dark {
+            @include theme($theme-dark);
+        }
     };
 
 }
@@ -70,7 +80,7 @@ table {
 main {
     padding: 20px;
 }
-// style cartes globales
+//// style cartes globales ////
 .cardContainer {
     gap: 10px;
     display: flex;
@@ -82,9 +92,9 @@ main {
         width: 100%;
         max-width: 500px;
         margin: 0 auto;
-        background-color: var(--primary-color);
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        background-image: linear-gradient(to left bottom, #1f2421, #212a26, #22302c, #223732, #223d3a, #224340, #224847, #214e4e, #215455, #225b5b, #216162, #216869);
         
         img {
             margin: 10px;
@@ -93,7 +103,7 @@ main {
 
         .cardTitle {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text-color);
         }
     }
@@ -109,7 +119,7 @@ main {
 
 .cardDescription {
     font-size: small;
-    color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .cardFooter {
@@ -118,7 +128,7 @@ main {
     justify-content: space-between;
     margin-top: 10px;
     font-size: small;
-    color: var(--);
+    color: var(--text-color);
 }
 
 .cardAuthor {
@@ -138,3 +148,30 @@ main {
     justify-content: space-between;
 }
 
+//// ajout de dark and light mode ////
+/// light mode 
+$theme-light: (
+    'primary-color': #1f2421,
+    'secondary-color': #216869,
+    'ternary-color': #9ce4e5,
+    'text-color': #f4f4f4,
+    'primary-font': 'Poppins, sans-serif',
+    'secondary-font': 'Roboto condensed, sans-serif'
+);
+
+/// dark mode
+$theme-dark: (
+    'primary-color': #f4f4f4,
+    'secondary-color': #f4f4f4,
+    'ternary-color': #f4f4f4,
+    'text-color': #1f2421,
+    'primary-font': 'Poppins, sans-serif',
+    'secondary-font': 'Roboto condensed, sans-serif'
+);
+
+//// creation du mixin pour le changement de theme ////
+@mixin theme($theme) {
+    background-color: map-get($theme, 'primary-color');
+    color: map-get($theme, 'text-color');
+    font-family: map-get($theme, 'primary-font');
+}
